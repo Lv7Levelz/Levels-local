@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Levels Local — Professional Websites That Grow Your Business</title>
-  <meta name="description" content="Futuristic, high-performance websites for local businesses. Get found. Look professional. Grow faster." />
+  <title>Levels Lab — Built to Take You Levels Ahead</title>
+  <meta name="description" content="Cutting-edge, futuristic websites that level up your business. Professional design, powerful performance, real results." />
   <meta name="robots" content="index, follow" />
 
   <!-- Fonts -->
@@ -17,13 +17,12 @@
       --bg: #050816;
       --surface: #0f172a;
       --card: rgba(15, 23, 42, 0.7);
-      --orange: #ff7a00;
-      --pink: #ff2ea6;
+      --cyan: #00d9ff;
       --purple: #8b5cf6;
-      --white: #f8fafc;
+      --white: #ffffff;
       --muted: #94a3b8;
-      --glow: 0 0 30px rgba(139, 92, 246, 0.3);
-      --glow-strong: 0 0 50px rgba(255, 122, 0, 0.4);
+      --glow: 0 0 30px rgba(0, 217, 255, 0.3);
+      --glow-strong: 0 0 50px rgba(139, 92, 246, 0.4);
     }
 
     * {
@@ -44,13 +43,13 @@
       overflow-x: hidden;
     }
 
-    /* Animated Background Grid & Particles */
+    /* Animated Background Grid */
     .bg-grid {
       position: fixed;
       inset: 0;
       background: 
         linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+        linear-gradient(90deg, rgba(0, 217, 255, 0.05) 1px, transparent 1px);
       background-size: 60px 60px;
       animation: gridMove 20s linear infinite;
       pointer-events: none;
@@ -62,6 +61,7 @@
       100% { transform: translate(60px, 60px); }
     }
 
+    /* Gradient Orbs */
     .gradient-orb {
       position: absolute;
       width: 500px;
@@ -74,7 +74,7 @@
     }
 
     .orb-1 {
-      background: var(--orange);
+      background: var(--cyan);
       top: -100px;
       right: -100px;
     }
@@ -101,7 +101,7 @@
 
     /* Header */
     header {
-      padding: 24px 0;
+      padding: 20px 0;
       position: fixed;
       top: 0;
       left: 0;
@@ -119,28 +119,22 @@
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: 700;
       display: flex;
       align-items: center;
       gap: 12px;
       text-decoration: none;
-      color: var(--white);
     }
 
-    .logo-svg {
-      filter: drop-shadow(0 0 8px rgba(255, 122, 0, 0.4));
-      transition: filter 0.3s;
-    }
-    .logo:hover .logo-svg {
-      filter: drop-shadow(0 0 12px rgba(139, 92, 246, 0.6));
+    .logo-img {
+      height: 48px;
+      width: auto;
+      filter: drop-shadow(0 0 8px rgba(0, 217, 255, 0.3));
+      transition: filter 0.3s, transform 0.3s;
     }
 
-    .logo span span {
-      background: linear-gradient(90deg, var(--orange), var(--pink), var(--purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .logo:hover .logo-img {
+      filter: drop-shadow(0 0 16px rgba(139, 92, 246, 0.6));
+      transform: scale(1.03);
     }
 
     nav a {
@@ -174,7 +168,7 @@
       display: inline-block;
       padding: 8px 20px;
       background: rgba(139, 92, 246, 0.1);
-      border: 1px solid rgba(139, 92, 246, 0.3);
+      border: 1px solid rgba(0, 217, 255, 0.3);
       border-radius: 999px;
       font-size: 14px;
       color: #c4b5fd;
@@ -188,7 +182,7 @@
     }
 
     .hero h1 span {
-      background: linear-gradient(90deg, var(--orange), var(--pink), var(--purple));
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -210,7 +204,7 @@
     .btn-primary {
       padding: 16px 36px;
       border-radius: 12px;
-      background: linear-gradient(90deg, var(--orange), var(--pink), var(--purple));
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
       color: white;
       font-weight: 600;
       text-decoration: none;
@@ -253,7 +247,7 @@
     }
 
     @keyframes pulseGlow {
-      0%,100% { box-shadow: 0 0 30px rgba(255, 122, 0, 0.15); }
+      0%,100% { box-shadow: 0 0 30px rgba(0, 217, 255, 0.15); }
       50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.25); }
     }
 
@@ -411,7 +405,7 @@
 
     /* Final CTA */
     .final-cta {
-      background: linear-gradient(135deg, rgba(255, 122, 0, 0.15), rgba(139, 92, 246, 0.15));
+      background: linear-gradient(135deg, rgba(0, 217, 255, 0.15), rgba(139, 92, 246, 0.15));
       border-radius: 24px;
       padding: 80px 40px;
       text-align: center;
@@ -441,6 +435,14 @@
       font-size: 14px;
     }
 
+    footer .gradient-text {
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 600;
+    }
+
     /* Responsive */
     @media (max-width: 900px) {
       .hero-grid {
@@ -450,6 +452,7 @@
         font-size: 40px;
       }
       nav { display: none; }
+      .logo-img { height: 40px; }
       .pricing-card.featured { transform: none; }
       .pricing-card.featured:hover { transform: translateY(-4px); }
     }
@@ -460,22 +463,12 @@
   <div class="gradient-orb orb-1"></div>
   <div class="gradient-orb orb-2"></div>
 
-  <!-- Header -->
+  <!-- Header with your exact logo -->
   <header>
     <div class="container nav-inner">
       <a href="#" class="logo">
-        <!-- Levels Lab Arrow-L Logo -->
-        <svg class="logo-svg" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 6L14 6L14 30L30 30L30 34L10 34L10 6Z" fill="url(#logo-gradient)" />
-          <polygon points="12,2 10,6 14,6" fill="url(#logo-gradient)" />
-          <defs>
-            <linearGradient id="logo-gradient" x1="8" y1="2" x2="30" y2="34" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#ff7a00" />
-              <stop offset="1" stop-color="#8b5cf6" />
-            </linearGradient>
-          </defs>
-        </svg>
-        <span>LEVELS <span>LOCAL</span></span>
+        <!-- Save your image as logo.png and upload it to GitHub -->
+        <img src="logo.png" alt="Levels Lab — Built to Take You Levels Ahead" class="logo-img">
       </a>
       <nav>
         <a href="#services">Services</a>
@@ -490,11 +483,11 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="hero-badge">Built for local businesses — designed to grow</div>
-        <h1>Professional websites that <span>level up</span> your business</h1>
-        <p>Get found on Google. Look instantly professional. Turn more visitors into paying customers — with zero technical effort from you.</p>
+        <div class="hero-badge">Built to take you levels ahead</div>
+        <h1>Websites that <span>stand out</span> and get results</h1>
+        <p>Futuristic design, blazing speed, and powerful performance — built to impress your customers before they even scroll.</p>
         <div class="btn-row">
-          <a href="#contact" class="btn-primary">Get Your Free Mockup</a>
+          <a href="#contact" class="btn-primary">Start Your Project</a>
           <a href="#showcase" class="btn-secondary">View Our Work</a>
         </div>
       </div>
@@ -502,8 +495,8 @@
         <div class="mockup-card">
           <div class="mockup-screen">
             <div class="screen-content" id="rotating-content">
-              <h3>🏠 Sheffield Roofing</h3>
-              <p>Fast, mobile-friendly, SEO-optimised</p>
+              <h3>🚀 Future-Ready Design</h3>
+              <p>Where innovation meets impact</p>
             </div>
           </div>
         </div>
@@ -515,33 +508,33 @@
   <section id="services">
     <div class="container">
       <div class="section-head">
-        <h2>Everything Your Business Needs Online</h2>
-        <p>One unified package — beautiful design, powerful features, and ongoing support.</p>
+        <h2>What We Build</h2>
+        <p>Everything you need to lead, not follow.</p>
       </div>
       <div class="cards-grid">
         <div class="glass-card">
-          <h3>🔍 SEO Optimised</h3>
-          <p>Built to rank on Google so local customers find you before your competitors.</p>
+          <h3>🎨 Futuristic Design</h3>
+          <p>Bold, unforgettable visuals that set you apart instantly.</p>
         </div>
         <div class="glass-card">
-          <h3>📱 Mobile First</h3>
-          <p>Perfect on phones — where most people will find and contact you.</p>
+          <h3>⚡ Lightning Fast</h3>
+          <p>Optimised code — pages load instantly, customers stay.</p>
         </div>
         <div class="glass-card">
-          <h3>⚡ Blazing Fast</h3>
-          <p>Pages load instantly — no waiting, no losing customers.</p>
+          <h3>📱 Perfect Everywhere</h3>
+          <p>Flawless experience on phones, tablets, and desktops.</p>
         </div>
         <div class="glass-card">
-          <h3>📅 Booking Systems</h3>
-          <p>Let clients book appointments 24/7 — synced straight to your calendar.</p>
+          <h3>🔍 SEO Built-In</h3>
+          <p>Google loves our code — get found first, every time.</p>
         </div>
         <div class="glass-card">
-          <h3>💬 Lead Capture</h3>
-          <p>Smart forms & WhatsApp integration — enquiries reach you instantly.</p>
+          <h3>📊 Analytics Ready</h3>
+          <p>Know your visitors, grow your business with real data.</p>
         </div>
         <div class="glass-card">
-          <h3>🛡️ Always Secured</h3>
-          <p>Free SSL, reliable hosting, and ongoing updates included.</p>
+          <h3>🛡️ Secure & Maintained</h3>
+          <p>SSL, backups, and updates — always included.</p>
         </div>
       </div>
     </div>
@@ -551,25 +544,25 @@
   <section id="showcase">
     <div class="container">
       <div class="section-head">
-        <h2>See What Your Business Could Look Like</h2>
-        <p>From roofers to salons — clean, modern designs that work.</p>
+        <h2>Work That Speaks</h2>
+        <p>Design so good, it becomes your best salesperson.</p>
       </div>
       <div class="cards-grid">
         <div class="glass-card">
-          <h3>🏠 Trades</h3>
-          <p>Roofers, builders, electricians — built to win trust and get calls.</p>
+          <h3>🏢 Corporate</h3>
+          <p>Professional, authoritative — built to win big contracts.</p>
         </div>
         <div class="glass-card">
-          <h3>✂️ Salons & Barbers</h3>
-          <p>Integrated booking, staff selection, and real-time availability.</p>
+          <h3>🚀 Startups</h3>
+          <p>Bold, energetic — from day one to scale.</p>
         </div>
         <div class="glass-card">
-          <h3>🍽️ Food & Drink</h3>
-          <p>Menus, opening times, and reservation systems — all in one place.</p>
+          <h3>🎯 Local Heroes</h3>
+          <p>Your community finds you, trusts you, chooses you — first.</p>
         </div>
         <div class="glass-card">
-          <h3>🦷 Local Services</h3>
-          <p>Health, beauty, tutors — professional designs that build confidence.</p>
+          <h3>💼 E-Commerce</h3>
+          <p>Beautiful storefronts that turn visitors into customers.</p>
         </div>
       </div>
     </div>
@@ -579,47 +572,47 @@
   <section id="pricing">
     <div class="container">
       <div class="section-head">
-        <h2>Simple, Transparent Pricing</h2>
-        <p>No hidden fees. No surprise bills.</p>
+        <h2>Clear, Fair Pricing</h2>
+        <p>No fine print. No surprises. Just value.</p>
       </div>
       <div class="pricing-grid">
         <div class="pricing-card">
           <h3>Starter</h3>
-          <div class="price">£500 <span>setup</span></div>
-          <p style="color:var(--muted); margin-bottom:20px;">£49/month care plan</p>
+          <div class="price">£499 <span>one-time</span></div>
+          <p style="color:var(--muted); margin-bottom:20px;">£39/month hosting & care</p>
           <ul>
-            <li>Professional 4–6 page website</li>
+            <li>4–6 custom pages</li>
             <li>Mobile & speed optimised</li>
             <li>Basic SEO setup</li>
             <li>Contact form</li>
-            <li>Hosting & updates included</li>
+            <li>SSL & reliable hosting</li>
           </ul>
           <a href="#contact" class="btn-secondary">Get Quote</a>
         </div>
         <div class="pricing-card featured">
           <h3>Growth — Most Popular</h3>
-          <div class="price">£750 <span>setup</span></div>
-          <p style="color:var(--muted); margin-bottom:20px;">£79/month care plan</p>
+          <div class="price">£899 <span>one-time</span></div>
+          <p style="color:var(--muted); margin-bottom:20px;">£69/month care plan</p>
           <ul>
             <li>Everything in Starter</li>
-            <li>Online booking system</li>
             <li>Advanced local SEO</li>
-            <li>WhatsApp integration</li>
-            <li>Google Reviews display</li>
+            <li>Analytics dashboard</li>
+            <li>Live chat integration</li>
             <li>Priority support</li>
+            <li>Monthly performance reports</li>
           </ul>
-          <a href="#contact" class="btn-primary">Get Your Free Mockup</a>
+          <a href="#contact" class="btn-primary">Get Started</a>
         </div>
         <div class="pricing-card">
           <h3>Premium</h3>
-          <div class="price">£1,000+ <span>setup</span></div>
-          <p style="color:var(--muted); margin-bottom:20px;">Custom monthly</p>
+          <div class="price">Custom <span>quote</span></div>
+          <p style="color:var(--muted); margin-bottom:20px;">Tailored monthly</p>
           <ul>
-            <li>Fully bespoke design</li>
-            <li>Advanced features built for you</li>
-            <li>Direct calendar sync</li>
-            <li>Advanced analytics</li>
-            <li>Dedicated account management</li>
+            <li>Fully bespoke design system</li>
+            <li>Advanced custom features</li>
+            <li>E-commerce or membership</li>
+            <li>Dedicated account manager</li>
+            <li>Direct developer access</li>
           </ul>
           <a href="#contact" class="btn-secondary">Discuss Project</a>
         </div>
@@ -631,9 +624,9 @@
   <section id="contact">
     <div class="container">
       <div class="final-cta">
-        <h2>Ready to Level Up Your Business?</h2>
-        <p>Your competitors are already being found online. Make sure you’re the one customers choose.</p>
-        <a href="mailto:hello@levelslocal.co.uk" class="btn-primary">Get Your Free Website Mockup →</a>
+        <h2>Ready to Level Up?</h2>
+        <p>Your brand deserves a website that leads, not follows. Let's build something extraordinary.</p>
+        <a href="mailto:hello@levelslab.co.uk" class="btn-primary">Start Your Project →</a>
       </div>
     </div>
   </section>
@@ -641,18 +634,18 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>© 2026 Levels Local — Websites That Grow Businesses</p>
-      <p style="margin-top:8px;">Built by Levels Lab</p>
+      <p>© 2026 <span class="gradient-text">LEVELS LAB</span> — Built to Take You Levels Ahead</p>
+      <p style="margin-top:8px;">All design & code by Levels Lab</p>
     </div>
   </footer>
 
-  <!-- Rotating Screen Script -->
+  <!-- Rotating Showcase Script -->
   <script>
     const items = [
-      { title: '🏠 Sheffield Roofing', desc: 'Trust-focused design → more enquiries' },
-      { title: '✂️ Elite Barber Studio', desc: 'Live booking → fewer calls, more bookings' },
-      { title: '🍽️ The Riverside Restaurant', desc: 'Menus + reservations → easier for everyone' },
-      { title: '🦷 Bright Dental Practice', desc: 'Clean, professional, reassuring' }
+      { title: '🚀 Tech Startup', desc: 'Bold, modern, investor-ready' },
+      { title: '🏗️ Construction Firm', desc: 'Trust, strength, professionalism' },
+      { title: '💎 Luxury Brand', desc: 'Elegant, immersive, premium' },
+      { title: '🏥 Healthcare Provider', desc: 'Calm, clear, compassionate' }
     ];
 
     let idx = 0;
