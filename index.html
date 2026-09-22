@@ -123,16 +123,17 @@
       font-weight: 700;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       text-decoration: none;
       color: var(--white);
     }
 
-    .logo-mark {
-      width: 36px;
-      height: 36px;
-      background: linear-gradient(135deg, var(--orange), var(--purple));
-      clip-path: polygon(0 0, 100% 0, 100% 25%, 50% 100%, 0 25%);
+    .logo-svg {
+      filter: drop-shadow(0 0 8px rgba(255, 122, 0, 0.4));
+      transition: filter 0.3s;
+    }
+    .logo:hover .logo-svg {
+      filter: drop-shadow(0 0 12px rgba(139, 92, 246, 0.6));
     }
 
     .logo span span {
@@ -463,7 +464,17 @@
   <header>
     <div class="container nav-inner">
       <a href="#" class="logo">
-        <div class="logo-mark"></div>
+        <!-- Levels Lab Arrow-L Logo -->
+        <svg class="logo-svg" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 6L14 6L14 30L30 30L30 34L10 34L10 6Z" fill="url(#logo-gradient)" />
+          <polygon points="12,2 10,6 14,6" fill="url(#logo-gradient)" />
+          <defs>
+            <linearGradient id="logo-gradient" x1="8" y1="2" x2="30" y2="34" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#ff7a00" />
+              <stop offset="1" stop-color="#8b5cf6" />
+            </linearGradient>
+          </defs>
+        </svg>
         <span>LEVELS <span>LOCAL</span></span>
       </a>
       <nav>
