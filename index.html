@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Levels Local — Professional Websites That Grow Your Business</title>
+  <meta name="description" content="Futuristic, high-performance websites for local businesses. Get found. Look professional. Grow faster." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #050816;
+      --surface: #0f172a;
+      --card: rgba(15, 23, 42, 0.7);
+      --orange: #ff7a00;
+      --pink: #ff2ea6;
+      --purple: #8b5cf6;
+      --white: #f8fafc;
+      --muted: #94a3b8;
+      --glow: 0 0 30px rgba(139, 92, 246, 0.3);
+      --glow-strong: 0 0 50px rgba(255, 122, 0, 0.4);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Animated Background Grid & Particles */
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      background: 
+        linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridMove 20s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes gridMove {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(60px, 60px); }
+    }
+
+    .gradient-orb {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.25;
+      animation: float 12s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    .orb-1 {
+      background: var(--orange);
+      top: -100px;
+      right: -100px;
+    }
+    .orb-2 {
+      background: var(--purple);
+      bottom: -150px;
+      left: -100px;
+      animation-delay: -6s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-30px, 30px) scale(1.1); }
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    header {
+      padding: 24px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(5, 8, 22, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--orange), var(--purple));
+      clip-path: polygon(0 0, 100% 0, 100% 25%, 50% 100%, 0 25%);
+    }
+
+    .logo span span {
+      background: linear-gradient(90deg, var(--orange), var(--pink), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 32px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--white);
+    }
+
+    /* Hero Section */
+    section.hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 20px;
+      background: rgba(139, 92, 246, 0.1);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 999px;
+      font-size: 14px;
+      color: #c4b5fd;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--orange), var(--pink), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: var(--muted);
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      padding: 16px 36px;
+      border-radius: 12px;
+      background: linear-gradient(90deg, var(--orange), var(--pink), var(--purple));
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: var(--glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--glow-strong);
+    }
+
+    .btn-secondary {
+      padding: 16px 36px;
+      border-radius: 12px;
+      background: transparent;
+      color: var(--white);
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--purple);
+      background: rgba(139, 92, 246, 0.1);
+    }
+
+    /* Mockup Display */
+    .mockup-card {
+      background: var(--card);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 24px;
+      box-shadow: var(--glow);
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%,100% { box-shadow: 0 0 30px rgba(255, 122, 0, 0.15); }
+      50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.25); }
+    }
+
+    .mockup-screen {
+      background: #0b1120;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .screen-content {
+      text-align: center;
+      padding: 30px;
+      transition: opacity 0.5s;
+    }
+
+    .screen-content h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .screen-content p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Section Base */
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-head h2 {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Glass Cards */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .glass-card {
+      background: var(--card);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 32px;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--purple);
+      box-shadow: 0 10px 40px rgba(139, 92, 246, 0.15);
+    }
+
+    .glass-card h3 {
+      font-size: 20px;
+      margin: 16px 0 8px;
+    }
+
+    .glass-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: var(--card);
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 40px;
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+    .pricing-card.featured {
+      border-color: var(--purple);
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(139, 92, 246, 0.2);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .pricing-card.featured:hover {
+      transform: scale(1.05) translateY(-4px);
+    }
+
+    .pricing-card h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .price span {
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      margin: 32px 0;
+    }
+
+    .pricing-card li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .pricing-card li::before {
+      content: "✓ ";
+      color: #4ade80;
+      font-weight: bold;
+    }
+
+    .pricing-card .btn-primary {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      background: linear-gradient(135deg, rgba(255, 122, 0, 0.15), rgba(139, 92, 246, 0.15));
+      border-radius: 24px;
+      padding: 80px 40px;
+      text-align: center;
+      border: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    .final-cta h2 {
+      font-size: 42px;
+      margin-bottom: 16px;
+    }
+
+    .final-cta p {
+      font-size: 20px;
+      color: var(--muted);
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 40px;
+      }
+      nav { display: none; }
+      .pricing-card.featured { transform: none; }
+      .pricing-card.featured:hover { transform: translateY(-4px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="gradient-orb orb-1"></div>
+  <div class="gradient-orb orb-2"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-mark"></div>
+        <span>LEVELS <span>LOCAL</span></span>
+      </a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#showcase">Showcase</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="btn-primary" style="padding:10px 24px; margin-left:20px;">Get Started</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">Built for local businesses — designed to grow</div>
+        <h1>Professional websites that <span>level up</span> your business</h1>
+        <p>Get found on Google. Look instantly professional. Turn more visitors into paying customers — with zero technical effort from you.</p>
+        <div class="btn-row">
+          <a href="#contact" class="btn-primary">Get Your Free Mockup</a>
+          <a href="#showcase" class="btn-secondary">View Our Work</a>
+        </div>
+      </div>
+      <div>
+        <div class="mockup-card">
+          <div class="mockup-screen">
+            <div class="screen-content" id="rotating-content">
+              <h3>🏠 Sheffield Roofing</h3>
+              <p>Fast, mobile-friendly, SEO-optimised</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>Everything Your Business Needs Online</h2>
+        <p>One unified package — beautiful design, powerful features, and ongoing support.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="glass-card">
+          <h3>🔍 SEO Optimised</h3>
+          <p>Built to rank on Google so local customers find you before your competitors.</p>
+        </div>
+        <div class="glass-card">
+          <h3>📱 Mobile First</h3>
+          <p>Perfect on phones — where most people will find and contact you.</p>
+        </div>
+        <div class="glass-card">
+          <h3>⚡ Blazing Fast</h3>
+          <p>Pages load instantly — no waiting, no losing customers.</p>
+        </div>
+        <div class="glass-card">
+          <h3>📅 Booking Systems</h3>
+          <p>Let clients book appointments 24/7 — synced straight to your calendar.</p>
+        </div>
+        <div class="glass-card">
+          <h3>💬 Lead Capture</h3>
+          <p>Smart forms & WhatsApp integration — enquiries reach you instantly.</p>
+        </div>
+        <div class="glass-card">
+          <h3>🛡️ Always Secured</h3>
+          <p>Free SSL, reliable hosting, and ongoing updates included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase -->
+  <section id="showcase">
+    <div class="container">
+      <div class="section-head">
+        <h2>See What Your Business Could Look Like</h2>
+        <p>From roofers to salons — clean, modern designs that work.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="glass-card">
+          <h3>🏠 Trades</h3>
+          <p>Roofers, builders, electricians — built to win trust and get calls.</p>
+        </div>
+        <div class="glass-card">
+          <h3>✂️ Salons & Barbers</h3>
+          <p>Integrated booking, staff selection, and real-time availability.</p>
+        </div>
+        <div class="glass-card">
+          <h3>🍽️ Food & Drink</h3>
+          <p>Menus, opening times, and reservation systems — all in one place.</p>
+        </div>
+        <div class="glass-card">
+          <h3>🦷 Local Services</h3>
+          <p>Health, beauty, tutors — professional designs that build confidence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing">
+    <div class="container">
+      <div class="section-head">
+        <h2>Simple, Transparent Pricing</h2>
+        <p>No hidden fees. No surprise bills.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Starter</h3>
+          <div class="price">£500 <span>setup</span></div>
+          <p style="color:var(--muted); margin-bottom:20px;">£49/month care plan</p>
+          <ul>
+            <li>Professional 4–6 page website</li>
+            <li>Mobile & speed optimised</li>
+            <li>Basic SEO setup</li>
+            <li>Contact form</li>
+            <li>Hosting & updates included</li>
+          </ul>
+          <a href="#contact" class="btn-secondary">Get Quote</a>
+        </div>
+        <div class="pricing-card featured">
+          <h3>Growth — Most Popular</h3>
+          <div class="price">£750 <span>setup</span></div>
+          <p style="color:var(--muted); margin-bottom:20px;">£79/month care plan</p>
+          <ul>
+            <li>Everything in Starter</li>
+            <li>Online booking system</li>
+            <li>Advanced local SEO</li>
+            <li>WhatsApp integration</li>
+            <li>Google Reviews display</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="#contact" class="btn-primary">Get Your Free Mockup</a>
+        </div>
+        <div class="pricing-card">
+          <h3>Premium</h3>
+          <div class="price">£1,000+ <span>setup</span></div>
+          <p style="color:var(--muted); margin-bottom:20px;">Custom monthly</p>
+          <ul>
+            <li>Fully bespoke design</li>
+            <li>Advanced features built for you</li>
+            <li>Direct calendar sync</li>
+            <li>Advanced analytics</li>
+            <li>Dedicated account management</li>
+          </ul>
+          <a href="#contact" class="btn-secondary">Discuss Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="contact">
+    <div class="container">
+      <div class="final-cta">
+        <h2>Ready to Level Up Your Business?</h2>
+        <p>Your competitors are already being found online. Make sure you’re the one customers choose.</p>
+        <a href="mailto:hello@levelslocal.co.uk" class="btn-primary">Get Your Free Website Mockup →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Levels Local — Websites That Grow Businesses</p>
+      <p style="margin-top:8px;">Built by Levels Lab</p>
+    </div>
+  </footer>
+
+  <!-- Rotating Screen Script -->
+  <script>
+    const items = [
+      { title: '🏠 Sheffield Roofing', desc: 'Trust-focused design → more enquiries' },
+      { title: '✂️ Elite Barber Studio', desc: 'Live booking → fewer calls, more bookings' },
+      { title: '🍽️ The Riverside Restaurant', desc: 'Menus + reservations → easier for everyone' },
+      { title: '🦷 Bright Dental Practice', desc: 'Clean, professional, reassuring' }
+    ];
+
+    let idx = 0;
+    const container = document.getElementById('rotating-content');
+
+    setInterval(() => {
+      idx = (idx + 1) % items.length;
+      container.style.opacity = '0';
+      setTimeout(() => {
+        container.innerHTML = `<h3>${items[idx].title}</h3><p>${items[idx].desc}</p>`;
+        container.style.opacity = '1';
+      }, 500);
+    }, 3500);
+  </script>
+</body>
+</html>
