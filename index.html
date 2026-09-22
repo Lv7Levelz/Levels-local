@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Levels Lab — Built to Take You Levels Ahead</title>
-  <meta name="description" content="Cutting-edge, futuristic websites that level up your business. Professional design, powerful performance, real results." />
+  <meta name="description" content="Cutting-edge, futuristic websites that level up your business." />
   <meta name="robots" content="index, follow" />
 
   <!-- Fonts -->
@@ -125,16 +125,46 @@
       text-decoration: none;
     }
 
+    /* Circular Glow Wrapper */
+    .logo-glow-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-glow-wrapper::before {
+      content: "";
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 217, 255, 0.5), rgba(139, 92, 246, 0.35), transparent 70%);
+      filter: blur(20px);
+      z-index: -1;
+      animation: softPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes softPulse {
+      0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.08);
+      }
+    }
+
+    /* Bigger Logo */
     .logo-img {
-      height: 48px;
+      height: 72px;
       width: auto;
-      filter: drop-shadow(0 0 8px rgba(0, 217, 255, 0.3));
-      transition: filter 0.3s, transform 0.3s;
+      transition: transform 0.3s ease;
     }
 
     .logo:hover .logo-img {
-      filter: drop-shadow(0 0 16px rgba(139, 92, 246, 0.6));
-      transform: scale(1.03);
+      transform: scale(1.05);
     }
 
     nav a {
@@ -154,7 +184,7 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding-top: 100px;
+      padding-top: 120px;
     }
 
     .hero-grid {
@@ -247,7 +277,7 @@
     }
 
     @keyframes pulseGlow {
-      0%,100% { box-shadow: 0 0 30px rgba(0, 217, 255, 0.15); }
+      0%, 100% { box-shadow: 0 0 30px rgba(0, 217, 255, 0.15); }
       50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.25); }
     }
 
@@ -452,7 +482,11 @@
         font-size: 40px;
       }
       nav { display: none; }
-      .logo-img { height: 40px; }
+      .logo-img { height: 56px; }
+      .logo-glow-wrapper::before {
+        width: 90px;
+        height: 90px;
+      }
       .pricing-card.featured { transform: none; }
       .pricing-card.featured:hover { transform: translateY(-4px); }
     }
@@ -463,12 +497,13 @@
   <div class="gradient-orb orb-1"></div>
   <div class="gradient-orb orb-2"></div>
 
-  <!-- Header with your exact logo -->
+  <!-- Header with Bigger Logo + Circular Glow -->
   <header>
     <div class="container nav-inner">
       <a href="#" class="logo">
-        <!-- Save your image as logo.png and upload it to GitHub -->
-        <img src="logo.png" alt="Levels Lab — Built to Take You Levels Ahead" class="logo-img">
+        <div class="logo-glow-wrapper">
+          <img src="logo.png" alt="Levels Lab — Built to Take You Levels Ahead" class="logo-img">
+        </div>
       </a>
       <nav>
         <a href="#services">Services</a>
